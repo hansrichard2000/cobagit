@@ -14,5 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index',
+        [
+            "pagetitle" => "Home",
+            "maintitle" => "My Library"
+        ]
+    );
 });
+
+Route::view('/tentang', 'about',
+    [
+        "pagetitle" => "About Us",
+        "maintitle" => "About My Library"
+    ]
+);
+
+Route::view('/contact', 'contact',
+    [
+        "pagetitle" => "Contact",
+        "maintitle" => "Contact Data"
+    ]
+);
